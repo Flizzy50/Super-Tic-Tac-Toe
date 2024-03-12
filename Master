@@ -226,6 +226,47 @@ def playerInputb9():
             else:
                 print(f"Oops! Try again! Player - \033[1;31m Player (0) \033[0;0m ! ")
             printBoard()
+
+def playerInput():
+    while True:
+        inpMain = int(input())
+        if inpMain == 1:
+            playerInputb1()
+            printBoard()
+            break
+        elif inpMain == 2:
+            playerInputb2()
+            printBoard()
+            break
+        elif inpMain == 3:
+            playerInputb3()
+            printBoard()
+            break
+        elif inpMain == 4:
+            playerInputb4()
+            printBoard()
+            break
+        elif inpMain == 5:
+            playerInputb5()
+            printBoard()
+            break
+        elif inpMain == 6:
+            playerInputb6()
+            printBoard()
+            break
+        elif inpMain == 7:
+            playerInputb7()
+            printBoard()
+            break
+        elif inpMain == 8:
+            playerInputb8()
+            printBoard()
+            break
+        elif inpMain == 9:
+            playerInputb9()
+            printBoard()
+            break
+        else: print("Invalid input, try again"); print("Enter sub-board number"); printBoard()
 #check for win or tie
 
 #check b1 sub-board
@@ -480,6 +521,8 @@ def checkTieb9():
         else:
             return False
 
+#check all sub-boards
+
 def checkWin():
     checkWinb1()
     checkWinb2()
@@ -506,45 +549,7 @@ def switchPlayer():
 
 printBoard()
 print("Enter sub-board number")
-while True:
-    inpMain = int(input())
-    if inpMain == 1:
-        playerInputb1()
-        printBoard()
-        break
-    elif inpMain == 2:
-        playerInputb2()
-        printBoard()
-        break
-    elif inpMain == 3:
-        playerInputb3()
-        printBoard()
-        break
-    elif inpMain == 4:
-        playerInputb4()
-        printBoard()
-        break
-    elif inpMain == 5:
-        playerInputb5()
-        printBoard()
-        break
-    elif inpMain == 6:
-        playerInputb6()
-        printBoard()
-        break
-    elif inpMain == 7:
-        playerInputb7()
-        printBoard()
-        break
-    elif inpMain == 8:
-        playerInputb8()
-        printBoard()
-        break
-    elif inpMain == 9:
-        playerInputb9()
-        printBoard()
-        break
-    else: print("Invalid input, try again"); print("Enter sub-board number"); printBoard()
+playerInput()
 
 switchPlayer()
 
