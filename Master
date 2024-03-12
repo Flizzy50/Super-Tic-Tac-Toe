@@ -229,7 +229,6 @@ def playerInputb9():
 
 def playerInput():
     while True:
-        inpMain = int(input())
         if inpMain == 1:
             playerInputb1()
             printBoard()
@@ -267,6 +266,11 @@ def playerInput():
             printBoard()
             break
         else: print("Invalid input, try again"); print("Enter sub-board number"); printBoard()
+
+def playerInputContinuation():
+    switchPlayer()
+    inpMain = inpSub
+
 #check for win or tie
 
 #check b1 sub-board
@@ -548,7 +552,8 @@ def switchPlayer():
 #Driver Program
 
 printBoard()
-print("Enter sub-board number")
+print("Enter main board number")
+inpMain = int(input())
 playerInput()
 
 switchPlayer()
