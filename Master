@@ -52,6 +52,9 @@ gameRunningb7 = True
 gameRunningb8 = True
 gameRunningb9 = True
 
+inpSub = None
+inpMain = None
+
 #printing boards
 
 def printBoard():
@@ -83,11 +86,11 @@ def printBoard():
 def playerInputb1():
     while True:
         if currentPlayer == "X":
-            inp = int(input(f"Enter a number 1-9 \033[1;34m Player (X) \033[0;0m : "))
+            inpSub = int(input(f"Enter a number 1-9 \033[1;34m Player (X) \033[0;0m : "))
         else:
-            inp = int(input(f"Enter a number 1-9 \033[1;31m Player (0) \033[0;0m : "))
-        if inp >= 1 and inp <= 9 and b1[inp-1] == "-":
-            b1[inp-1] = currentPlayer
+            inpSub = int(input(f"Enter a number 1-9 \033[1;31m Player (0) \033[0;0m : "))
+        if inpSub >= 1 and inpSub <= 9 and b1[inpSub-1] == "-":
+            b1[inpSub-1] = currentPlayer
             break
         else:
             if currentPlayer == "X":
@@ -99,11 +102,11 @@ def playerInputb1():
 def playerInputb2():
     while True:
         if currentPlayer == "X":
-            inp = int(input(f"Enter a number 1-9 \033[1;34m Player (X) \033[0;0m : "))
+            inpSub = int(input(f"Enter a number 1-9 \033[1;34m Player (X) \033[0;0m : "))
         else:
-            inp = int(input(f"Enter a number 1-9 \033[1;31m Player (0) \033[0;0m : "))
-        if inp >= 1 and inp <= 9 and b2[inp-1] == "-":
-            b2[inp-1] = currentPlayer
+            inpSub = int(input(f"Enter a number 1-9 \033[1;31m Player (0) \033[0;0m : "))
+        if inpSub >= 1 and inpSub <= 9 and b2[inpSub-1] == "-":
+            b2[inpSub-1] = currentPlayer
             break
         else:
             if currentPlayer == "X":
@@ -115,11 +118,11 @@ def playerInputb2():
 def playerInputb3():
     while True:
         if currentPlayer == "X":
-            inp = int(input(f"Enter a number 1-9 \033[1;34m Player (X) \033[0;0m : "))
+            inpSub = int(input(f"Enter a number 1-9 \033[1;34m Player (X) \033[0;0m : "))
         else:
-            inp = int(input(f"Enter a number 1-9 \033[1;31m Player (0) \033[0;0m : "))
-        if inp >= 1 and inp <= 9 and b3[inp-1] == "-":
-            b3[inp-1] = currentPlayer
+            inpSub = int(input(f"Enter a number 1-9 \033[1;31m Player (0) \033[0;0m : "))
+        if inpSub >= 1 and inpSub <= 9 and b3[inpSub-1] == "-":
+            b3[inpSub-1] = currentPlayer
             break
         else:
             if currentPlayer == "X":
@@ -131,11 +134,11 @@ def playerInputb3():
 def playerInputb4():
     while True:
         if currentPlayer == "X":
-            inp = int(input(f"Enter a number 1-9 \033[1;34m Player (X) \033[0;0m : "))
+            inpSub = int(input(f"Enter a number 1-9 \033[1;34m Player (X) \033[0;0m : "))
         else:
-            inp = int(input(f"Enter a number 1-9 \033[1;31m Player (0) \033[0;0m : "))
-        if inp >= 1 and inp <= 9 and b4[inp-1] == "-":
-            b4[inp-1] = currentPlayer
+            inpSub = int(input(f"Enter a number 1-9 \033[1;31m Player (0) \033[0;0m : "))
+        if inpSub >= 1 and inpSub <= 9 and b4[inpSub-1] == "-":
+            b4[inpSub-1] = currentPlayer
             break
         else:
             if currentPlayer == "X":
@@ -147,11 +150,11 @@ def playerInputb4():
 def playerInputb5():
     while True:
         if currentPlayer == "X":
-            inp = int(input(f"Enter a number 1-9 \033[1;34m Player (X) \033[0;0m : "))
+            inpSub = int(input(f"Enter a number 1-9 \033[1;34m Player (X) \033[0;0m : "))
         else:
-            inp = int(input(f"Enter a number 1-9 \033[1;31m Player (0) \033[0;0m : "))
-        if inp >= 1 and inp <= 9 and b5[inp-1] == "-":
-            b5[inp-1] = currentPlayer
+            inpSub = int(input(f"Enter a number 1-9 \033[1;31m Player (0) \033[0;0m : "))
+        if inpSub >= 1 and inpSub <= 9 and b5[inpSub-1] == "-":
+            b5[inpSub-1] = currentPlayer
             break
         else:
             if currentPlayer == "X":
@@ -163,11 +166,11 @@ def playerInputb5():
 def playerInputb6():
     while True:
         if currentPlayer == "X":
-            inp = int(input(f"Enter a number 1-9 \033[1;34m Player (X) \033[0;0m : "))
+            inpSub = int(input(f"Enter a number 1-9 \033[1;34m Player (X) \033[0;0m : "))
         else:
-            inp = int(input(f"Enter a number 1-9 \033[1;31m Player (0) \033[0;0m : "))
-        if inp >= 1 and inp <= 9 and b6[inp-1] == "-":
-            b6[inp-1] = currentPlayer
+            inpSub = int(input(f"Enter a number 1-9 \033[1;31m Player (0) \033[0;0m : "))
+        if inpSub >= 1 and inpSub <= 9 and b6[inpSub-1] == "-":
+            b6[inpSub-1] = currentPlayer
             break
         else:
             if currentPlayer == "X":
@@ -179,11 +182,11 @@ def playerInputb6():
 def playerInputb7():
     while True:
         if currentPlayer == "X":
-            inp = int(input(f"Enter a number 1-9 \033[1;34m Player (X) \033[0;0m : "))
+            inpSub = int(input(f"Enter a number 1-9 \033[1;34m Player (X) \033[0;0m : "))
         else:
-            inp = int(input(f"Enter a number 1-9 \033[1;31m Player (0) \033[0;0m : "))
-        if inp >= 1 and inp <= 9 and b7[inp-1] == "-":
-            b7[inp-1] = currentPlayer
+            inpSub = int(input(f"Enter a number 1-9 \033[1;31m Player (0) \033[0;0m : "))
+        if inpSub >= 1 and inpSub <= 9 and b7[inpSub-1] == "-":
+            b7[inpSub-1] = currentPlayer
             break
         else:
             if currentPlayer == "X":
@@ -195,11 +198,11 @@ def playerInputb7():
 def playerInputb8():
     while True:
         if currentPlayer == "X":
-            inp = int(input(f"Enter a number 1-9 \033[1;34m Player (X) \033[0;0m : "))
+            inpSub = int(input(f"Enter a number 1-9 \033[1;34m Player (X) \033[0;0m : "))
         else:
-            inp = int(input(f"Enter a number 1-9 \033[1;31m Player (0) \033[0;0m : "))
-        if inp >= 1 and inp <= 9 and b8[inp-1] == "-":
-            b8[inp-1] = currentPlayer
+            inpSub = int(input(f"Enter a number 1-9 \033[1;31m Player (0) \033[0;0m : "))
+        if inpSub >= 1 and inpSub <= 9 and b8[inpSub-1] == "-":
+            b8[inpSub-1] = currentPlayer
             break
         else:
             if currentPlayer == "X":
@@ -211,11 +214,11 @@ def playerInputb8():
 def playerInputb9():
     while True:
         if currentPlayer == "X":
-            inp = int(input(f"Enter a number 1-9 \033[1;34m Player (X) \033[0;0m : "))
+            inpSub = int(input(f"Enter a number 1-9 \033[1;34m Player (X) \033[0;0m : "))
         else:
-            inp = int(input(f"Enter a number 1-9 \033[1;31m Player (0) \033[0;0m : "))
-        if inp >= 1 and inp <= 9 and b9[inp-1] == "-":
-            b9[inp-1] = currentPlayer
+            inpSub = int(input(f"Enter a number 1-9 \033[1;31m Player (0) \033[0;0m : "))
+        if inpSub >= 1 and inpSub <= 9 and b9[inpSub-1] == "-":
+            b9[inpSub-1] = currentPlayer
             break
         else:
             if currentPlayer == "X":
@@ -497,48 +500,47 @@ def switchPlayer():
     else:
         currentPlayer = "X"
 
-
-
-
 #check for win or tie again
+
+#Driver Program
 
 printBoard()
 print("Enter sub-board number")
 while True:
-    subBoardNum = int(input())
-    if subBoardNum == 1:
+    inpMain = int(input())
+    if inpMain == 1:
         playerInputb1()
         printBoard()
         break
-    elif subBoardNum == 2:
+    elif inpMain == 2:
         playerInputb2()
         printBoard()
         break
-    elif subBoardNum == 3:
+    elif inpMain == 3:
         playerInputb3()
         printBoard()
         break
-    elif subBoardNum == 4:
+    elif inpMain == 4:
         playerInputb4()
         printBoard()
         break
-    elif subBoardNum == 5:
+    elif inpMain == 5:
         playerInputb5()
         printBoard()
         break
-    elif subBoardNum == 6:
+    elif inpMain == 6:
         playerInputb6()
         printBoard()
         break
-    elif subBoardNum == 7:
+    elif inpMain == 7:
         playerInputb7()
         printBoard()
         break
-    elif subBoardNum == 8:
+    elif inpMain == 8:
         playerInputb8()
         printBoard()
         break
-    elif subBoardNum == 9:
+    elif inpMain == 9:
         playerInputb9()
         printBoard()
         break
