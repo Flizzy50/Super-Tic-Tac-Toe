@@ -489,26 +489,49 @@ def switchPlayer():
 
 #check for win or tie again
 
-import time
-
 printBoard()
 print("Enter sub-board number")
-subBoardNum = int(input())
-if subBoardNum == 1:
-    playerInputb1()
-elif subBoardNum == 2:
-    playerInputb2()
-elif subBoardNum == 3:
-    playerInputb3()
-elif subBoardNum == 4:
-    playerInputb4()
-elif subBoardNum == 5:
-    playerInputb5()
-elif subBoardNum == 6:
-    playerInputb6()
-elif subBoardNum == 7:
-    playerInputb7()
-elif subBoardNum == 8:
-    playerInputb8()
-elif subBoardNum == 9:
-    playerInputb9()
+while True:
+    subBoardNum = int(input())
+    if subBoardNum == 1:
+        playerInputb1()
+        printBoard()
+        break
+    elif subBoardNum == 2:
+        playerInputb2()
+        printBoard()
+        break
+    elif subBoardNum == 3:
+        playerInputb3()
+        printBoard()
+        break
+    elif subBoardNum == 4:
+        playerInputb4()
+        printBoard()
+        break
+    elif subBoardNum == 5:
+        playerInputb5()
+        printBoard()
+        break
+    elif subBoardNum == 6:
+        playerInputb6()
+        printBoard()
+        break
+    elif subBoardNum == 7:
+        playerInputb7()
+        printBoard()
+        break
+    elif subBoardNum == 8:
+        playerInputb8()
+        printBoard()
+        break
+    elif subBoardNum == 9:
+        playerInputb9()
+        printBoard()
+        break
+    else: print("Invalid input, try again"); print("Enter sub-board number"); printBoard()
+
+switchPlayer()
+
+import time
+time.sleep(5)
