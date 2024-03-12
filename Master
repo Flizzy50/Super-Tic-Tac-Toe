@@ -477,13 +477,26 @@ def checkTieb9():
         else:
             return False
 
+def checkWin():
+    checkWinb1()
+    checkWinb2()
+    checkWinb3()
+    checkWinb4()
+    checkWinb5()
+    checkWinb6()
+    checkWinb7()
+    checkWinb8()
+    checkWinb9()
+
 #switch the player
+
 def switchPlayer():
     global currentPlayer
     if currentPlayer == "X":
         currentPlayer = "O"
     else:
         currentPlayer = "X"
+
 
 
 
