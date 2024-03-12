@@ -248,8 +248,8 @@ def checkTieb1():
     if "-" not in b1:
         checkWinb1()
         if winnerb1 == None:
-            return True
             gameRunningb1 = False
+            return True
         else:
             return False
 
@@ -276,8 +276,8 @@ def checkTieb2():
     if "-" not in b2:
         checkWinb2()
         if winnerb2 == None:
-            return True
             gameRunningb2 = False
+            return True
         else:
             return False
 
@@ -304,8 +304,8 @@ def checkTieb3():
     if "-" not in b3:
         checkWinb3()
         if winnerb3 == None:
-            return True
             gameRunningb3 = False
+            return True
         else:
             return False
 
@@ -332,8 +332,8 @@ def checkTieb4():
     if "-" not in b4:
         checkWinb4()
         if winnerb4 == None:
-            return True
             gameRunningb4 = False
+            return True
         else:
             return False
 
@@ -360,8 +360,8 @@ def checkTieb5():
     if "-" not in b5:
         checkWinb5()
         if winnerb5 == None:
-            return True
             gameRunningb5 = False
+            return True
         else:
             return False
 
@@ -388,8 +388,8 @@ def checkTieb6():
     if "-" not in b6:
         checkWinb6()
         if winnerb6 == None:
-            return True
             gameRunningb6 = False
+            return True
         else:
             return False
 
@@ -416,8 +416,8 @@ def checkTieb7():
     if "-" not in b7:
         checkWinb7()
         if winnerb7 == None:
-            return True
             gameRunningb7 = False
+            return True
         else:
             return False
 
@@ -444,8 +444,8 @@ def checkTieb8():
     if "-" not in b8:
         checkWinb8()
         if winnerb8 == None:
-            return True
             gameRunningb8 = False
+            return True
         else:
             return False
 
@@ -472,8 +472,8 @@ def checkTieb9():
     if "-" not in b9:
         checkWinb9()
         if winnerb9 == None:
-            return True
             gameRunningb9 = False
+            return True
         else:
             return False
 
