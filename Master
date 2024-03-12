@@ -494,21 +494,32 @@ import time
 printBoard()
 print("Enter sub-board number")
 subBoardNum = int(input())
-if subBoardNum == 1:
-    playerInputb1()
-elif subBoardNum == 2:
-    playerInputb2()
-elif subBoardNum == 3:
-    playerInputb3()
-elif subBoardNum == 4:
-    playerInputb4()
-elif subBoardNum == 5:
-    playerInputb5()
-elif subBoardNum == 6:
-    playerInputb6()
-elif subBoardNum == 7:
-    playerInputb7()
-elif subBoardNum == 8:
-    playerInputb8()
-elif subBoardNum == 9:
-    playerInputb9()
+while True:
+    if subBoardNum == 1:
+        playerInputb1()
+        break
+    elif subBoardNum == 2:
+        playerInputb2()
+        break
+    elif subBoardNum == 3:
+        playerInputb3()
+        break
+    elif subBoardNum == 4:
+        playerInputb4()
+        break
+    elif subBoardNum == 5:
+        playerInputb5()
+        break
+    elif subBoardNum == 6:
+        playerInputb6()
+        break
+    elif subBoardNum == 7:
+        playerInputb7()
+        break
+    elif subBoardNum == 8:
+        playerInputb8()
+        break
+    elif subBoardNum == 9:
+        playerInputb9()
+        break
+    else: print("Invalid input, try again")
