@@ -28,17 +28,17 @@ b9 = ['-', '-', '-',
 
 currentPlayer = "X"
 
-winner = None
+winner = "Placeholder"
 
-winnerb1 = None
-winnerb2 = None
-winnerb3 = None
-winnerb4 = None
-winnerb5 = None
-winnerb6 = None
-winnerb7 = None
-winnerb8 = None
-winnerb9 = None
+winnerb1 = "Placeholder"
+winnerb2 = "Placeholder"
+winnerb3 = "Placeholder"
+winnerb4 = "Placeholder"
+winnerb5 = "Placeholder"
+winnerb6 = "Placeholder"
+winnerb7 = "Placeholder"
+winnerb8 = "Placeholder"
+winnerb9 = "Placeholder"
 
 gameRunning = True
 
@@ -268,7 +268,6 @@ def playerInput():
         else: print("Invalid input, try again"); print("Enter sub-board number"); printBoard()
 
 def playerInputContinuation():
-    switchPlayer()
     inpMain = inpSub
     playerInput()
 
@@ -277,27 +276,22 @@ def playerInputContinuation():
 #check b1 sub-board
 
 def checkWinb1():
-    if checkDiagonalb1() or checkColumnb1() or checkRowb1():
-        winnerb1 = currentPlayer
-        gameRunningb1 = False
+    if (checkDiagonalb1 or checkColumnb1 or checkRowb1):
+        return True
 
 def checkColumnb1():
     if (b1[0] == b1[1] == b1[2] and b1[0] != "-") or (b1[3] == b1[4] == b1[5] and b1[3] != "-") or (b1[6] == b1[7] == b1[8] and b1[6] != "-"):
-        winnerb1 = currentPlayer
         return True
 def checkRowb1():
     if (b1[0] == b1[3] == b1[6] and b1[0] != "-") or (b1[1] == b1[4] == b1[7] and b1[1] != "-") or (b1[2] == b1[5] == b1[8] and b1[2] != "-"):
-        winnerb1 = currentPlayer
         return True
 def checkDiagonalb1():
     if (b1[0] == b1[4] == b1[8] and b1[0] != "-") or (b1[2] == b1[4] == b1[6] and b1[2] != "-"):
-        winnerb1 = currentPlayer
         return True
 def checkTieb1():
     if "-" not in b1:
         checkWinb1()
-        if winnerb1 == None:
-            gameRunningb1 = False
+        if winnerb1 == "Placeholder":
             return True
         else:
             return False
@@ -324,7 +318,7 @@ def checkDiagonalb2():
 def checkTieb2():
     if "-" not in b2:
         checkWinb2()
-        if winnerb2 == None:
+        if winnerb2 == "Placeholder":
             gameRunningb2 = False
             return True
         else:
@@ -352,7 +346,7 @@ def checkDiagonalb3():
 def checkTieb3():
     if "-" not in b3:
         checkWinb3()
-        if winnerb3 == None:
+        if winnerb3 == "Placeholder":
             gameRunningb3 = False
             return True
         else:
@@ -380,7 +374,7 @@ def checkDiagonalb4():
 def checkTieb4():
     if "-" not in b4:
         checkWinb4()
-        if winnerb4 == None:
+        if winnerb4 == "Placeholder":
             gameRunningb4 = False
             return True
         else:
@@ -408,7 +402,7 @@ def checkDiagonalb5():
 def checkTieb5():
     if "-" not in b5:
         checkWinb5()
-        if winnerb5 == None:
+        if winnerb5 == "Placeholder":
             gameRunningb5 = False
             return True
         else:
@@ -436,7 +430,7 @@ def checkDiagonalb6():
 def checkTieb6():
     if "-" not in b6:
         checkWinb6()
-        if winnerb6 == None:
+        if winnerb6 == "Placeholder":
             gameRunningb6 = False
             return True
         else:
@@ -464,7 +458,7 @@ def checkDiagonalb7():
 def checkTieb7():
     if "-" not in b7:
         checkWinb7()
-        if winnerb7 == None:
+        if winnerb7 == "Placeholder":
             gameRunningb7 = False
             return True
         else:
@@ -492,7 +486,7 @@ def checkDiagonalb8():
 def checkTieb8():
     if "-" not in b8:
         checkWinb8()
-        if winnerb8 == None:
+        if winnerb8 == "Placeholder":
             gameRunningb8 = False
             return True
         else:
@@ -520,7 +514,7 @@ def checkDiagonalb9():
 def checkTieb9():
     if "-" not in b9:
         checkWinb9()
-        if winnerb9 == None:
+        if winnerb9 == "Placeholer":
             gameRunningb9 = False
             return True
         else:
@@ -529,21 +523,19 @@ def checkTieb9():
 #check main boards
 
 def checkMainDiagonal():
-    if (checkWinb1() == checkWinb5() == checkWinb9() == True) or (checkWinb3 == checkWinb5 == checkWinb7 == True):
-        winner = currentPlayer
-        gameRunning = False
+    if (checkWinb1 == checkWinb5 == checkWinb9 == True) or (checkWinb3 == checkWinb5 == checkWinb7 == True):
         return True
 
 def checkMainRow():
     if (checkWinb1 == checkWinb2 == checkWinb3 == True) or (checkWinb4 == checkWinb5 == checkWinb6 == True) or (checkWinb7 == checkWinb8 == checkWinb9 == True):
-        winner = currentPlayer
-        gameRunning = False
         return True
 
 def checkMainColumn():
     if (checkWinb1 == checkWinb4 == checkWinb7 == True) or (checkWinb2 == checkWinb5 == checkWinb8 == True) or (checkWinb3 == checkWinb6 == checkWinb9 == True):
-        winner = currentPlayer
-        gameRunning = False
+        return True
+
+def checkMainWin():
+    if(checkMainDiagonal == True) or (checkMainRow == True) or (checkMainColumn == True):
         return True
 
 #switch the player
@@ -564,9 +556,8 @@ print("Enter main board number")
 inpMain = int(input())
 playerInput()
 while gameRunning == True:
+    switchPlayer()
     playerInputContinuation()
-
-switchPlayer()
 
 import time
 time.sleep(5)
