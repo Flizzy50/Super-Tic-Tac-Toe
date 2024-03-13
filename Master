@@ -270,6 +270,7 @@ def playerInput():
 def playerInputContinuation():
     switchPlayer()
     inpMain = inpSub
+    playerInput()
 
 #check for win or tie
 
@@ -525,18 +526,25 @@ def checkTieb9():
         else:
             return False
 
-#check all sub-boards
+#check main boards
 
-def checkWin():
-    checkWinb1()
-    checkWinb2()
-    checkWinb3()
-    checkWinb4()
-    checkWinb5()
-    checkWinb6()
-    checkWinb7()
-    checkWinb8()
-    checkWinb9()
+def checkMainDiagonal():
+    if (checkWinb1() == checkWinb5() == checkWinb9() == True) or (checkWinb3 == checkWinb5 == checkWinb7 == True):
+        winner = currentPlayer
+        gameRunning = False
+        return True
+
+def checkMainRow():
+    if (checkWinb1 == checkWinb2 == checkWinb3 == True) or (checkWinb4 == checkWinb5 == checkWinb6 == True) or (checkWinb7 == checkWinb8 == checkWinb9 == True):
+        winner = currentPlayer
+        gameRunning = False
+        return True
+
+def checkMainColumn():
+    if (checkWinb1 == checkWinb4 == checkWinb7 == True) or (checkWinb2 == checkWinb5 == checkWinb8 == True) or (checkWinb3 == checkWinb6 == checkWinb9 == True):
+        winner = currentPlayer
+        gameRunning = False
+        return True
 
 #switch the player
 
@@ -555,6 +563,8 @@ printBoard()
 print("Enter main board number")
 inpMain = int(input())
 playerInput()
+while gameRunning == True:
+    playerInputContinuation()
 
 switchPlayer()
 
