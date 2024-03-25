@@ -1,30 +1,30 @@
 b1 = ['-', '-', '-',
-       '-', '-', '-',
-       '-', '-', '-']
+      '-', '-', '-',
+      '-', '-', '-']
 b2 = ['-', '-', '-',
-       '-', '-', '-',
-       '-', '-', '-']
+      '-', '-', '-',
+      '-', '-', '-']
 b3 = ['-', '-', '-',
-       '-', '-', '-',
-       '-', '-', '-']
+      '-', '-', '-',
+      '-', '-', '-']
 b4 = ['-', '-', '-',
-       '-', '-', '-',
-       '-', '-', '-']
+      '-', '-', '-',
+      '-', '-', '-']
 b5 = ['-', '-', '-',
-       '-', '-', '-',
-       '-', '-', '-']
+      '-', '-', '-',
+      '-', '-', '-']
 b6 = ['-', '-', '-',
-       '-', '-', '-',
-       '-', '-', '-']
+      '-', '-', '-',
+      '-', '-', '-']
 b7 = ['-', '-', '-',
-       '-', '-', '-',
-       '-', '-', '-']
+      '-', '-', '-',
+      '-', '-', '-']
 b8 = ['-', '-', '-',
-       '-', '-', '-',
-       '-', '-', '-']
+      '-', '-', '-',
+      '-', '-', '-']
 b9 = ['-', '-', '-',
-       '-', '-', '-',
-       '-', '-', '-']
+      '-', '-', '-',
+      '-', '-', '-']
 
 currentPlayer = "X"
 
@@ -52,8 +52,8 @@ gameRunningb7 = True
 gameRunningb8 = True
 gameRunningb9 = True
 
-inpSub = None
-inpMain = None
+inpSub = 0
+inpMain = 0
 
 #printing boards
 
@@ -228,320 +228,364 @@ def playerInputb9():
             printBoard()
 
 def playerInput():
+    print("Enter sub-board number")
+    inpMain = int(input())
     while True:
         if inpMain == 1:
             playerInputb1()
-            printBoard()
             break
         elif inpMain == 2:
             playerInputb2()
-            printBoard()
             break
         elif inpMain == 3:
             playerInputb3()
-            printBoard()
             break
         elif inpMain == 4:
             playerInputb4()
-            printBoard()
             break
         elif inpMain == 5:
             playerInputb5()
-            printBoard()
             break
         elif inpMain == 6:
             playerInputb6()
-            printBoard()
             break
         elif inpMain == 7:
-            playerInputb7()
-            printBoard()
+            playerInputb7()            
             break
         elif inpMain == 8:
             playerInputb8()
-            printBoard()
             break
         elif inpMain == 9:
             playerInputb9()
-            printBoard()
             break
         else: print("Invalid input, try again"); print("Enter sub-board number"); printBoard()
 
-def playerInputContinuation():
+def playerInputContinue():
     inpMain = inpSub
-    playerInput()
+    while True:
+        if inpMain == 1:
+            playerInputb1()
+            break
+        elif inpMain == 2:
+            playerInputb2()
+            break
+        elif inpMain == 3:
+            playerInputb3()
+            break
+        elif inpMain == 4:
+            playerInputb4()
+            break
+        elif inpMain == 5:
+            playerInputb5()
+            break
+        elif inpMain == 6:
+            playerInputb6()
+            break
+        elif inpMain == 7:
+            playerInputb7()            
+            break
+        elif inpMain == 8:
+            playerInputb8()
+            break
+        elif inpMain == 9:
+            playerInputb9()
+            break
+        else: print("Invalid input, try again"); print("Enter sub-board number"); printBoard()
+
+
 
 #check for win or tie
 
 #check b1 sub-board
 
-def checkWinb1():
-    if (checkDiagonalb1 or checkColumnb1 or checkRowb1):
-        return True
-
 def checkColumnb1():
     if (b1[0] == b1[1] == b1[2] and b1[0] != "-") or (b1[3] == b1[4] == b1[5] and b1[3] != "-") or (b1[6] == b1[7] == b1[8] and b1[6] != "-"):
         return True
+    else:
+        return False
 def checkRowb1():
     if (b1[0] == b1[3] == b1[6] and b1[0] != "-") or (b1[1] == b1[4] == b1[7] and b1[1] != "-") or (b1[2] == b1[5] == b1[8] and b1[2] != "-"):
         return True
+    else:
+        return False
 def checkDiagonalb1():
     if (b1[0] == b1[4] == b1[8] and b1[0] != "-") or (b1[2] == b1[4] == b1[6] and b1[2] != "-"):
         return True
+    else:
+        return False
 def checkTieb1():
-    if "-" not in b1:
-        checkWinb1()
-        if winnerb1 == "Placeholder":
-            return True
-        else:
-            return False
+    if ('-' not in b1) and checkWinb1 == False:
+        return True
+    else:
+        return False
+
+def checkWinb1():
+    if (checkDiagonalb1 or checkColumnb1 or checkRowb1):
+        return True
+    else:
+        return False
 
 #check b2 sub-board
 
 def checkWinb2():
     if checkDiagonalb2() or checkColumnb2() or checkRowb2():
-        winnerb2 = currentPlayer
-        gameRunningb2 = False
+        return True
+    else:
+        return False
 
 def checkColumnb2():
     if (b2[0] == b2[1] == b2[2] and b2[0] != "-") or (b2[3] == b2[4] == b2[5] and b2[3] != "-") or (b2[6] == b2[7] == b2[8] and b2[6] != "-"):
-        winnerb2 = currentPlayer
         return True
+    else:
+        return False
 def checkRowb2():
     if (b2[0] == b2[3] == b2[6] and b2[0] != "-") or (b2[1] == b2[4] == b2[7] and b2[1] != "-") or (b2[2] == b2[5] == b2[8] and b2[2] != "-"):
-        winnerb2 = currentPlayer
         return True
+    else:
+        return False
 def checkDiagonalb2():
     if (b2[0] == b2[4] == b2[8] and b2[0] != "-") or (b2[2] == b2[4] == b2[6] and b2[2] != "-"):
-        winnerb2 = currentPlayer
         return True
+    else:
+        return False
 def checkTieb2():
-    if "-" not in b2:
-        checkWinb2()
-        if winnerb2 == "Placeholder":
-            gameRunningb2 = False
-            return True
-        else:
-            return False
+    if ("-" not in b2) and checkWinb2 == False:
+        return True
+    else:
+        return False
 
 #check b3 sub-board
 
 def checkWinb3():
     if checkDiagonalb3() or checkColumnb3() or checkRowb3():
-        winnerb3 = currentPlayer
-        gameRunningb3 = False
+        return True
+    else:
+        return False
 
 def checkColumnb3():
     if (b3[0] == b3[1] == b3[2] and b3[0] != "-") or (b3[3] == b3[4] == b3[5] and b3[3] != "-") or (b3[6] == b3[7] == b3[8] and b3[6] != "-"):
-        winnerb3 = currentPlayer
         return True
+    else:
+        return False
 def checkRowb3():
     if (b3[0] == b3[3] == b3[6] and b3[0] != "-") or (b3[1] == b3[4] == b3[7] and b3[1] != "-") or (b3[2] == b3[5] == b3[8] and b3[2] != "-"):
-        winnerb3 = currentPlayer
         return True
+    else:
+        return False
 def checkDiagonalb3():
     if (b3[0] == b3[4] == b3[8] and b3[0] != "-") or (b3[2] == b3[4] == b3[6] and b3[2] != "-"):
-        winnerb3 = currentPlayer
         return True
+    else:
+        return False
 def checkTieb3():
-    if "-" not in b3:
-        checkWinb3()
-        if winnerb3 == "Placeholder":
-            gameRunningb3 = False
-            return True
-        else:
-            return False
+    if ("-" not in b3) and checkWinb3 == False:
+        return True
+    else:
+        return False
 
 #check b4 sub-board
 
 def checkWinb4():
     if checkDiagonalb4() or checkColumnb4() or checkRowb4():
-        winnerb4 = currentPlayer
-        gameRunningb4 = False
+        return True
+    else:
+        return False
 
 def checkColumnb4():
     if (b4[0] == b4[1] == b4[2] and b4[0] != "-") or (b4[3] == b4[4] == b4[5] and b4[3] != "-") or (b4[6] == b4[7] == b4[8] and b4[6] != "-"):
-        winnerb4 = currentPlayer
         return True
+    else:
+        return False
 def checkRowb4():
     if (b4[0] == b4[3] == b4[6] and b4[0] != "-") or (b4[1] == b4[4] == b4[7] and b4[1] != "-") or (b4[2] == b4[5] == b4[8] and b4[2] != "-"):
-        winnerb4 = currentPlayer
         return True
+    else:
+        return False
 def checkDiagonalb4():
     if (b4[0] == b4[4] == b4[8] and b4[0] != "-") or (b4[2] == b4[4] == b4[6] and b4[2] != "-"):
-        winnerb4 = currentPlayer
         return True
+    else:
+        return False
 def checkTieb4():
-    if "-" not in b4:
-        checkWinb4()
-        if winnerb4 == "Placeholder":
-            gameRunningb4 = False
-            return True
-        else:
-            return False
+    if ("-" not in b4) and checkWinb4 == False:
+        return True
+    else:
+        return False
 
 #check b5 sub-board
 
 def checkWinb5():
     if checkDiagonalb5() or checkColumnb5() or checkRowb5():
-        winnerb5 = currentPlayer
-        gameRunningb5 = False
+        return True
+    else:
+        return False
 
 def checkColumnb5():
     if (b5[0] == b5[1] == b5[2] and b5[0] != "-") or (b5[3] == b5[4] == b5[5] and b5[3] != "-") or (b5[6] == b5[7] == b5[8] and b5[6] != "-"):
-        winnerb5 = currentPlayer
         return True
+    else:
+        return False
 def checkRowb5():
     if (b5[0] == b5[3] == b5[6] and b5[0] != "-") or (b5[1] == b5[4] == b5[7] and b5[1] != "-") or (b5[2] == b5[5] == b5[8] and b5[2] != "-"):
-        winnerb5 = currentPlayer
         return True
+    else:
+        return False
 def checkDiagonalb5():
     if (b5[0] == b5[4] == b5[8] and b5[0] != "-") or (b5[2] == b5[4] == b5[6] and b5[2] != "-"):
-        winnerb5 = currentPlayer
         return True
+    else:
+        return False
 def checkTieb5():
-    if "-" not in b5:
-        checkWinb5()
-        if winnerb5 == "Placeholder":
-            gameRunningb5 = False
-            return True
-        else:
-            return False
+    if ("-" not in b5) and (checkWinb5 == False):
+        return True
+    else:
+        return False
 
 #check b6 sub-board
 
 def checkWinb6():
     if checkDiagonalb6() or checkColumnb6() or checkRowb6():
-        winnerb6 = currentPlayer
-        gameRunningb6 = False
+        return True
+    else:
+        return False
 
 def checkColumnb6():
     if (b6[0] == b6[1] == b6[2] and b6[0] != "-") or (b6[3] == b6[4] == b6[5] and b6[3] != "-") or (b6[6] == b6[7] == b6[8] and b6[6] != "-"):
-        winnerb6 = currentPlayer
         return True
+    else:
+        return False
 def checkRowb6():
     if (b6[0] == b6[3] == b6[6] and b6[0] != "-") or (b6[1] == b6[4] == b6[7] and b6[1] != "-") or (b6[2] == b6[5] == b6[8] and b6[2] != "-"):
-        winnerb6 = currentPlayer
         return True
+    else:
+        return False
 def checkDiagonalb6():
     if (b6[0] == b6[4] == b6[8] and b6[0] != "-") or (b6[2] == b6[4] == b6[6] and b6[2] != "-"):
-        winnerb6 = currentPlayer
         return True
+    else:
+        return False
 def checkTieb6():
-    if "-" not in b6:
-        checkWinb6()
-        if winnerb6 == "Placeholder":
-            gameRunningb6 = False
-            return True
-        else:
-            return False
+    if ("-" not in b6) and (checkWinb6 == False):
+        return True
+    else:
+        return False
 
 #check b7 sub-board
 
 def checkWinb7():
     if checkDiagonalb7() or checkColumnb7() or checkRowb7():
-        winnerb7 = currentPlayer
-        gameRunningb7 = False
+        return True
+    else:
+        return False
 
 def checkColumnb7():
     if (b7[0] == b7[1] == b7[2] and b7[0] != "-") or (b7[3] == b7[4] == b7[5] and b7[3] != "-") or (b7[6] == b7[7] == b7[8] and b7[6] != "-"):
-        winnerb7 = currentPlayer
         return True
+    else:
+        return False
 def checkRowb7():
     if (b7[0] == b7[3] == b7[6] and b7[0] != "-") or (b7[1] == b7[4] == b7[7] and b7[1] != "-") or (b7[2] == b7[5] == b7[8] and b7[2] != "-"):
-        winnerb7 = currentPlayer
         return True
+    else:
+        return False
 def checkDiagonalb7():
     if (b7[0] == b7[4] == b7[8] and b7[0] != "-") or (b7[2] == b7[4] == b7[6] and b7[2] != "-"):
-        winnerb7 = currentPlayer
         return True
+    else:
+        return False
 def checkTieb7():
-    if "-" not in b7:
-        checkWinb7()
-        if winnerb7 == "Placeholder":
-            gameRunningb7 = False
-            return True
-        else:
-            return False
+    if ("-" not in b7) and (checkWinb7 == False):
+        return True
+    else:
+        return False
 
 #check b8 sub-board
 
 def checkWinb8():
     if checkDiagonalb8() or checkColumnb8() or checkRowb8():
-        winnerb8 = currentPlayer
-        gameRunningb8 = False
+        return True
+    else:
+        return False
 
 def checkColumnb8():
     if (b8[0] == b8[1] == b8[2] and b8[0] != "-") or (b8[3] == b8[4] == b8[5] and b8[3] != "-") or (b8[6] == b8[7] == b8[8] and b8[6] != "-"):
-        winnerb8 = currentPlayer
         return True
+    else:
+        return False
 def checkRowb8():
     if (b8[0] == b8[3] == b8[6] and b8[0] != "-") or (b8[1] == b8[4] == b8[7] and b8[1] != "-") or (b8[2] == b8[5] == b8[8] and b8[2] != "-"):
-        winnerb8 = currentPlayer
         return True
+    else:
+        return False
 def checkDiagonalb8():
     if (b8[0] == b8[4] == b8[8] and b8[0] != "-") or (b8[2] == b8[4] == b8[6] and b8[2] != "-"):
-        winnerb8 = currentPlayer
         return True
+    else:
+        return False
 def checkTieb8():
-    if "-" not in b8:
-        checkWinb8()
-        if winnerb8 == "Placeholder":
-            gameRunningb8 = False
-            return True
-        else:
-            return False
+    if ("-" not in b8) and (checkWinb8 == False):
+        return True
+    else:
+        return False
 
 #check b9 sub-board
 
 def checkWinb9():
     if checkDiagonalb9() or checkColumnb9() or checkRowb9():
-        winnerb9 = currentPlayer
-        gameRunningb9 = False
+        return True
+    else:
+        return False
 
 def checkColumnb9():
     if (b9[0] == b9[1] == b9[2] and b9[0] != "-") or (b9[3] == b9[4] == b9[5] and b9[3] != "-") or (b9[6] == b9[7] == b9[8] and b9[6] != "-"):
-        winnerb9 = currentPlayer
         return True
+    else:
+        return False
 def checkRowb9():
     if (b9[0] == b9[3] == b9[6] and b9[0] != "-") or (b9[1] == b9[4] == b9[7] and b9[1] != "-") or (b9[2] == b9[5] == b9[8] and b9[2] != "-"):
-        winnerb9 = currentPlayer
         return True
+    else:
+        return False
 def checkDiagonalb9():
     if (b9[0] == b9[4] == b9[8] and b9[0] != "-") or (b9[2] == b9[4] == b9[6] and b9[2] != "-"):
-        winnerb9 = currentPlayer
         return True
+    else:
+        return False
 def checkTieb9():
-    if "-" not in b9:
-        checkWinb9()
-        if winnerb9 == "Placeholer":
-            gameRunningb9 = False
-            return True
-        else:
-            return False
+    if ("-" not in b9) and (checkWinb9 == False):
+        return True
+    else:
+        return False
 
 #check main boards
 
 def checkMainDiagonal():
     if (checkWinb1 == checkWinb5 == checkWinb9 == True) or (checkWinb3 == checkWinb5 == checkWinb7 == True):
         return True
+    else:
+        return False
 
 def checkMainRow():
     if (checkWinb1 == checkWinb2 == checkWinb3 == True) or (checkWinb4 == checkWinb5 == checkWinb6 == True) or (checkWinb7 == checkWinb8 == checkWinb9 == True):
         return True
+    else:
+        return False
 
 def checkMainColumn():
     if (checkWinb1 == checkWinb4 == checkWinb7 == True) or (checkWinb2 == checkWinb5 == checkWinb8 == True) or (checkWinb3 == checkWinb6 == checkWinb9 == True):
         return True
+    else:
+        return False
 
 def checkMainWin():
     if(checkMainDiagonal == True) or (checkMainRow == True) or (checkMainColumn == True):
         return True
+    else:
+        return False
 
 #switch the player
 
 def switchPlayer():
-    global currentPlayer
     if currentPlayer == "X":
         currentPlayer = "O"
     else:
@@ -552,12 +596,18 @@ def switchPlayer():
 #Driver Program
 
 printBoard()
-print("Enter main board number")
-inpMain = int(input())
-playerInput()
+playerInput
+checkMainWin
 while gameRunning == True:
-    switchPlayer()
-    playerInputContinuation()
+    printBoard()
+    switchPlayer
+    inpMain = inpSub
+    playerInput
+    if(checkMainWin == True):
+        gameRunning = False
+        winner  = currentPlayer
+        printBoard
 
+print(currentPlayer + "Has won the game")
 import time
 time.sleep(5)
